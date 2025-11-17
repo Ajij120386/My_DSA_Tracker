@@ -1,0 +1,292 @@
+/* =========================================================
+   GLOBAL STYLES & MODERN RESET
+   ========================================================= */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  /* Colors inspired by the provided image */
+  --bg-start: #f7f8fe;
+  --bg-end: #eff3ff;
+  --card-bg: #ffffff;
+  --card-shadow: rgba(45, 55, 72, 0.08);
+  --border-color: #e5e7eb;
+  --text-primary: #111827;
+  --text-secondary: #6b7280;
+  --link-color: #4f46e5;
+  --accent-complete-bg: #dcfce7;
+  --accent-complete-text: #166534;
+  --accent-pending-bg: #f3f4f6;
+  --accent-pending-text: #374151;
+}
+
+body {
+  font-family: "Inter", system-ui, sans-serif;
+  color: var(--text-primary);
+  background-image: linear-gradient(135deg, var(--bg-start) 0%, var(--bg-end) 100%);
+  background-attachment: fixed;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* =========================================================
+   MAIN LAYOUT & ANIMATIONS
+   ========================================================= */
+.page {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 3rem 1.5rem;
+  animation: fadeIn 0.5s ease-out forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+/* =========================================================
+   SHARED HEADER & TITLE STYLES
+   ========================================================= */
+
+/* --- THIS IS THE KEY UPDATED SECTION --- */
+
+/* This rule centers the title on ALL pages (Homepage and Topic pages) */
+.page-title {
+  font-size: 2.75rem;
+  font-weight: 800;
+  letter-spacing: -1.5px;
+  color: var(--text-primary);
+  text-align: center; /* This is the magic line for the title */
+  margin-bottom: 2.5rem;
+}
+
+/* New styling for the beautiful "Back" button box */
+.back-link {
+  display: inline-flex; /* Allows padding and alignment */
+  align-items: center;
+  background-color: var(--card-bg);
+  color: var(--link-color);
+  font-weight: 600;
+  text-decoration: none;
+  padding: 8px 16px;
+  border-radius: 9999px; /* This creates the pill shape */
+  box-shadow: 0 4px 6px -1px var(--card-shadow), 0 2px 4px -1px rgba(0, 0, 0, 0.04);
+  margin-bottom: 2rem; /* Creates space between it and the centered title */
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.back-link:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 15px -3px var(--card-shadow), 0 4px 6px -2px rgba(0, 0, 0, 0.04);
+}
+
+/* --- END OF KEY UPDATES --- */
+
+
+/* =========================================================
+   PROGRESS BAR (Used on Homepage)
+   ========================================================= */
+.progress-wrapper {
+  max-width: 500px;
+  margin: 1.5rem auto 0;
+}
+
+.progress-label {
+  text-align: center;
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+.progress-bar-bg {
+  background: rgba(255, 255, 255, 0.9);
+  height: 12px;
+  border-radius: 20px;
+  border: 1px solid var(--border-color);
+  overflow: hidden;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.progress-bar-fill {
+  height: 100%;
+  background-color: var(--link-color);
+  border-radius: 20px;
+  transition: width 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+
+/* =========================================================
+   HOMEPAGE STYLES
+   ========================================================= */
+.homepage-header {
+  /* This container is now only used for the homepage progress bar */
+  margin-bottom: 3rem;
+}
+
+.topics-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.topic-card {
+  background: var(--card-bg);
+  padding: 1.75rem;
+  border-radius: 20px;
+  border: 1px solid #fff;
+  box-shadow: 0 4px 6px -1px var(--card-shadow), 0 2px 4px -1px rgba(0, 0, 0, 0.04);
+  transition: transform 0.2s ease-out, box-shadow 0.2s ease-out;
+}
+
+.topic-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 15px -3px var(--card-shadow), 0 4px 6px -2px rgba(0, 0, 0, 0.04);
+}
+
+.topic-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.topic-subtitle {
+  margin-top: 4px;
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+}
+
+.btn-primary {
+  margin-top: 1.25rem;
+  background-color: var(--link-color);
+  color: #ffffff;
+  padding: 10px 20px;
+  border-radius: 10px;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.btn-primary:hover {
+  background-color: #4338ca;
+}
+
+/* =========================================================
+   TOPIC PAGE STYLES
+   ========================================================= */
+.search-bar input {
+  width: 100%;
+  padding: 16px 20px;
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 14px;
+  font-size: 1rem;
+  color: var(--text-primary);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.search-bar input::placeholder {
+  color: var(--text-secondary);
+}
+
+.search-bar input:focus {
+  outline: none;
+  border-color: var(--link-color);
+  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.15);
+}
+
+.table-wrapper {
+  background: var(--card-bg);
+  margin-top: 2rem;
+  border-radius: 20px;
+  box-shadow: 0 4px 6px -1px var(--card-shadow), 0 2px 4px -1px rgba(0, 0, 0, 0.04);
+  overflow: hidden;
+}
+
+.questions-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.questions-table th,
+.questions-table td {
+  padding: 1.25rem 1.5rem;
+  text-align: left;
+  border-bottom: 1px solid #f3f4f6;
+}
+
+.questions-table tr:last-child td {
+  border-bottom: none;
+}
+
+.questions-table th {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+}
+
+.questions-table tr {
+  transition: background-color 0.2s ease;
+}
+
+.questions-table tr:hover {
+  background-color: #f7f8fe;
+}
+
+.questions-table a {
+  color: var(--link-color);
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.questions-table a:hover {
+  text-decoration: underline;
+}
+
+.questions-table input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+  border-radius: 4px;
+  accent-color: var(--link-color);
+}
+
+.status-badge {
+  padding: 6px 14px;
+  border-radius: 9999px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  display: inline-block;
+}
+
+.status-complete {
+  background: var(--accent-complete-bg);
+  color: var(--accent-complete-text);
+}
+
+.status-pending {
+  background: var(--accent-pending-bg);
+  color: var(--accent-pending-text);
+}
+
+.platform-logo {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  object-fit: contain;
+}
