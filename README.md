@@ -19,7 +19,9 @@ The entire problem list is managed in a single, easy-to-edit `data.jsx` file, ma
 
 | Homepage                                        | Topic Page                                       |
 | ----------------------------------------------- | ------------------------------------------------ |
-| ![Homepage Screenshot](<REPLACE_WITH_HOMEPAGE_SCREENSHOT_URL>) | ![Topic Page Screenshot](<REPLACE_WITH_TOPICPAGE_SCREENSHOT_URL>) |
+| ![Homepage Screenshot](<<img width="1920" height="1840" alt="image" src="https://github.com/user-attachments/assets/fb80e83d-ab3b-485b-8bbc-4ee1eeee5349" />
+>) | ![Topic Page Screenshot](<img width="1920" height="1480" alt="image" src="https://github.com/user-attachments/assets/0717a9a1-61b1-40a8-a56f-60209b1df161" />
+>) |
 | *A clean overview of all DSA topics.*           | *A detailed view of problems within a topic.*      |
 
 ## 🛠️ Tech Stack
