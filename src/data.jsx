@@ -358,10 +358,10 @@ export const topics = [
       },
       {
         id: "h3",
-        title: "Subarray Sum Equals K",
-        url: "https://leetcode.com/problems/subarray-sum-equals-k/description/",
+        title: "Longest Subarray Sum  K",
+        url: "https://www.geeksforgeeks.org/problems/longest-sub-array-with-sum-k0809/1",
         platform: "LeetCode",
-        platformLogo: "/logos/leetcode.png",
+        platformLogo: "/logos/gfg.png",
       },
       {
         id: "h4",
