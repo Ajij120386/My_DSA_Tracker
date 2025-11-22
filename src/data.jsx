@@ -28,9 +28,9 @@ export const topics = [
       {
         id: "a4",
         title: "Segregate Even and Odd Numbers",
-        url: "https://www.geeksforgeeks.org/problems/segregate-even-and-odd-numbers4629/1",
-        platform: "GFG",
-        platformLogo: "/logos/gfg.png",
+        url: "https://leetcode.com/problems/sort-even-and-odd-indices-independently/description/",
+         platform: "LeetCode",
+        platformLogo: "/logos/leetcode.png",
       },
       {
         id: "a5",
