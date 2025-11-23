@@ -598,7 +598,7 @@ export const topics = [
       },
       {
         id: "dp3",
-        title: "Geek Jump",
+        title: "Frog Jump",
         url: "https://www.geeksforgeeks.org/problems/geek-jump/1",
         platform: "GFG",
         platformLogo: "/logos/gfg.png",
@@ -606,7 +606,7 @@ export const topics = [
       {
         id: "dp4",
         title: "Frog Jump with k Distances",
-        url: "https://takeuforward.org/plus/dsa/problems/frog-jump-with-k-distances",
+        url: "https://atcoder.jp/contests/dp/tasks/dp_b",
         platform: "TakeUForward",
         platformLogo: "/logos/gfg.png",
       },
