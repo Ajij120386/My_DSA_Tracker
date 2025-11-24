@@ -786,10 +786,10 @@ export const topics = [
     questions: [
       {
         id: "nt1",
-        title: "Count Primes",
-        url: "https://leetcode.com/problems/count-primes/description/",
-        platform: "LeetCode",
-        platformLogo: "/logos/leetcode.png",
+        title: "Sieve of Eratosthenes",
+        url: "https://www.geeksforgeeks.org/problems/sieve-of-eratosthenes5242",
+        platform: "GFG",
+        platformLogo: "/logos/gfg.png",
       },
       {
         id: "nt2",
@@ -800,8 +800,8 @@ export const topics = [
       },
       {
         id: "nt3",
-        title: "Largest prime factor",
-        url: "https://www.geeksforgeeks.org/problems/largest-prime-factor2601/1",
+        title: "Prime factorization",
+        url: "https://www.geeksforgeeks.org/problems/prime-factorization/1",
         platform: "GFG",
         platformLogo: "/logos/gfg.png",
       },
