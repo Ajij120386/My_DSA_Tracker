@@ -1,0 +1,60 @@
+/* src/App.css */
+
+/* Container that holds the card in the middle of the screen */
+.exam-card-container {
+  display: flex;
+  justify-content: center; /* Horizontal Center */
+  margin-top: 30px;
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+/* The White Card Itself */
+.exam-card-home {
+  background: white;
+  width: 100%;
+  max-width: 400px; /* Slightly wider for better center look */
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Vertical Center */
+  align-items: center;     /* Horizontal Center for Flex items */
+  gap: 15px;
+  border: 1px solid #f0f0f0;
+  text-align: center;      /* <--- THIS CENTERS THE TEXT */
+}
+
+/* Title Text */
+.exam-card-title {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #2d3436;
+  margin: 0;
+}
+
+/* Subtitle Text */
+.exam-card-subtitle {
+  color: #636e72;
+  font-size: 0.95rem;
+  margin: 5px 0 15px 0;
+}
+
+/* Button */
+.exam-card-btn {
+  background: #e91e63;
+  color: white;
+  text-decoration: none;
+  padding: 12px 30px;
+  border-radius: 50px; /* Rounded Pill shape looks better centered */
+  font-weight: 600;
+  font-size: 1rem;
+  transition: transform 0.2s, background 0.2s;
+  box-shadow: 0 4px 10px rgba(233, 30, 99, 0.3);
+}
+
+.exam-card-btn:hover {
+  background: #c2185b;
+  transform: translateY(-2px);
+}
