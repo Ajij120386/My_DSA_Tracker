@@ -11,38 +11,80 @@ const MathText = ({ text }) => {
 
       if (!text) return;
 
-      // Split text by "$" to find math parts
-      const parts = text.split('$');
+      // 1. Split by Triple Backticks (```) to find CODE BLOCKS
+      // The 's' flag allows the dot (.) to match newlines
+      const codeParts = text.split(/```(.*?)```/s);
 
-      parts.forEach((part, index) => {
-        // Even index = English Text, Odd index = Math
-        if (index % 2 === 0) {
-          // Handle **Bold** text inside English
-          const boldSegments = part.split(/\*\*(.*?)\*\*/g);
-          boldSegments.forEach((segment, bIndex) => {
-            if (bIndex % 2 === 1) {
-              const boldSpan = document.createElement('strong');
-              boldSpan.innerText = segment;
-              containerRef.current.appendChild(boldSpan);
-            } else {
-              containerRef.current.appendChild(document.createTextNode(segment));
+      codeParts.forEach((part, index) => {
+        
+        // ODD Index = It was inside ``` ... ``` (So it is a CODE BLOCK)
+        if (index % 2 === 1) {
+          const pre = document.createElement('pre');
+          pre.className = 'code-block'; // Styled in MCQExam.css
+          pre.innerText = part.trim();  // Preserves indentation & newlines
+          containerRef.current.appendChild(pre);
+        } 
+        
+        // EVEN Index = Normal Text (Process Math, Inline Code, Bold)
+        else {
+          // 2. Split normal text by "$" for Math Formulas
+          const mathParts = part.split('$');
+
+          mathParts.forEach((mathSegment, mIndex) => {
+            
+            // ODD Index = Math ($...$)
+            if (mIndex % 2 === 1) {
+              const mathSpan = document.createElement('span');
+              try {
+                katex.render(mathSegment, mathSpan, { throwOnError: false });
+                containerRef.current.appendChild(mathSpan);
+              } catch (e) {
+                // Fallback if math fails
+                containerRef.current.appendChild(document.createTextNode('$' + mathSegment + '$'));
+              }
+            } 
+            
+            // EVEN Index = Text mixed with inline code/bold
+            else {
+              // 3. Split by single backtick (`) for Inline Code
+              const inlineParts = mathSegment.split(/`(.*?)`/g);
+              
+              inlineParts.forEach((seg, iIndex) => {
+                
+                // ODD Index = Inline Code (`...`)
+                if (iIndex % 2 === 1) {
+                  const codeSpan = document.createElement('span');
+                  codeSpan.className = 'inline-code'; // Styled in MCQExam.css
+                  codeSpan.innerText = seg;
+                  containerRef.current.appendChild(codeSpan);
+                } 
+                
+                // EVEN Index = Process Bold (**)
+                else {
+                  const boldSegments = seg.split(/\*\*(.*?)\*\*/g);
+                  
+                  boldSegments.forEach((bSeg, bIndex) => {
+                    // ODD Index = Bold (**...**)
+                    if (bIndex % 2 === 1) {
+                      const boldSpan = document.createElement('strong');
+                      boldSpan.innerText = bSeg;
+                      containerRef.current.appendChild(boldSpan);
+                    } else {
+                      // Finally, just plain text
+                      containerRef.current.appendChild(document.createTextNode(bSeg));
+                    }
+                  });
+                }
+              });
             }
           });
-        } else {
-          // Render Math using KaTeX
-          const mathSpan = document.createElement('span');
-          try {
-            katex.render(part, mathSpan, { throwOnError: false });
-            containerRef.current.appendChild(mathSpan);
-          } catch (e) {
-            containerRef.current.appendChild(document.createTextNode('$' + part + '$'));
-          }
         }
       });
     }
   }, [text]);
 
-  return <span ref={containerRef} style={{ fontSize: '1.1em', color: '#333' }} />;
+  // Using a div instead of span to allow block elements (like <pre>) inside
+  return <div ref={containerRef} style={{ fontSize: '1.1rem', color: '#374151', lineHeight: '1.6' }} />;
 };
 
 export default MathText;

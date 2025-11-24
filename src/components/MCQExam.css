@@ -1,26 +1,52 @@
-/* src/components/MCQExam.css */
-
-/* --- GLOBAL LAYOUT --- */
+/* =========================================
+   1. GLOBAL WRAPPER & LAYOUT
+   ========================================= */
 .exam-wrapper-centered {
   display: flex;
   justify-content: center;
   align-items: flex-start;
   min-height: 100vh;
   width: 100%;
-  background-color: #f4f6f9; /* Softer Blue-Grey */
+  background-color: #f4f6f9; /* Soft Blue-Grey Background */
   padding-top: 40px;
   padding-bottom: 80px;
   font-family: 'Inter', 'Segoe UI', sans-serif;
   color: #1f2937;
+  box-sizing: border-box;
 }
 
 .exam-container {
   width: 100%;
-  max-width: 900px;
+  max-width: 900px; /* Limits width for a professional look */
   padding: 0 20px;
 }
 
-/* --- ADMIN PANEL --- */
+/* =========================================
+   2. ADMIN PANEL (INPUT SCREEN)
+   ========================================= */
+
+/* Back Button */
+.exam-back-link {
+  display: inline-block;
+  color: #3f51b5; 
+  text-decoration: none;
+  font-weight: 600;
+  background: white;
+  padding: 10px 25px;
+  border-radius: 50px; /* Pill Shape */
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  transition: all 0.2s ease;
+  border: 1px solid #eef2f6;
+  margin-bottom: 20px;
+}
+
+.exam-back-link:hover {
+  transform: translateX(-5px);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+  background: #fff;
+  color: #2563eb;
+}
+
 .admin-card {
   background: white;
   padding: 40px;
@@ -28,17 +54,39 @@
   box-shadow: 0 10px 40px rgba(0,0,0,0.08);
   text-align: center;
 }
-.admin-title { color: #2563eb; font-size: 2.2rem; margin: 0 0 15px 0; }
-.json-input {
-  width: 100%; height: 300px; padding: 20px;
-  border: 2px solid #e5e7eb; border-radius: 12px;
-  font-family: 'Fira Code', monospace; font-size: 14px;
-  background-color: #f9fafb; color: #374151;
-  margin-bottom: 25px; resize: vertical; outline: none;
-}
-.json-input:focus { border-color: #2563eb; background: white; }
 
-/* --- EXAM & TIMER --- */
+.admin-title {
+  color: #2563eb;
+  font-size: 2.2rem;
+  margin: 0 0 15px 0;
+}
+
+.json-input {
+  width: 100%;
+  height: 300px;
+  padding: 20px;
+  border: 2px solid #e5e7eb;
+  border-radius: 12px;
+  font-family: 'Fira Code', 'Consolas', monospace; /* Monospace for code */
+  font-size: 14px;
+  background-color: #f9fafb;
+  color: #374151;
+  margin-bottom: 25px;
+  resize: vertical;
+  outline: none;
+  box-sizing: border-box;
+}
+
+.json-input:focus {
+  border-color: #2563eb;
+  background: white;
+}
+
+/* =========================================
+   3. EXAM INTERFACE (Timer & Questions)
+   ========================================= */
+
+/* Timer Bar */
 .timer-bar {
   background: white;
   color: #111827;
@@ -61,44 +109,81 @@
   margin-bottom: 25px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.04);
   border: 1px solid #f3f4f6;
+  text-align: left;
 }
 
 .question-header {
-  display: flex; gap: 15px; font-size: 1.2rem;
-  font-weight: 600; margin-bottom: 25px; line-height: 1.6;
+  display: flex;
+  gap: 15px;
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 25px;
+  line-height: 1.6;
   color: #111827;
 }
 
-/* Options */
-.options-grid { display: flex; flex-direction: column; gap: 12px; }
-
-.option-label {
-  display: flex; align-items: center; padding: 15px 20px;
-  border: 2px solid #e5e7eb; border-radius: 10px;
-  cursor: pointer; background: white; transition: all 0.2s;
+/* Options Layout */
+.options-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
 }
 
-.option-label:hover { border-color: #93c5fd; background: #eff6ff; }
-.option-label input { display: none; }
+.option-label {
+  display: flex;
+  align-items: center;
+  padding: 15px 20px;
+  border: 2px solid #e5e7eb;
+  border-radius: 10px;
+  cursor: pointer;
+  background: white;
+  transition: all 0.2s;
+}
 
-/* Custom Circle */
+.option-label:hover {
+  border-color: #93c5fd;
+  background: #eff6ff;
+}
+
+.option-label input {
+  display: none; /* Hide standard radio button */
+}
+
+/* Custom Circle (A, B, C, D) */
 .option-circle {
-  width: 32px; height: 32px; border-radius: 50%;
-  border: 2px solid #d1d5db; display: flex;
-  align-items: center; justify-content: center;
-  font-weight: 700; color: #6b7280; margin-right: 15px;
-  background: white; flex-shrink: 0;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 2px solid #d1d5db;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  color: #6b7280;
+  margin-right: 15px;
+  background: white;
+  flex-shrink: 0;
 }
 
 /* Selected State */
 .option-label input:checked + .option-circle {
-  background: #2563eb; color: white; border-color: #2563eb;
-}
-.option-label:has(input:checked) {
-  border-color: #2563eb; background: #eff6ff;
+  background: #2563eb;
+  color: white;
+  border-color: #2563eb;
 }
 
-/* --- RESULT DASHBOARD (The Big Change) --- */
+.option-label:has(input:checked) {
+  border-color: #2563eb;
+  background: #eff6ff;
+}
+
+.option-text {
+  font-size: 1rem;
+}
+
+/* =========================================
+   4. RESULT DASHBOARD (High End UI)
+   ========================================= */
 .result-dashboard {
   background: white;
   border-radius: 16px;
@@ -112,27 +197,47 @@
 }
 
 .result-score-title {
-  font-size: 1.1rem; color: #6b7280; font-weight: 600; letter-spacing: 1px; text-transform: uppercase;
+  font-size: 1.1rem;
+  color: #6b7280;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
 }
+
 .result-score-value {
-  font-size: 3rem; font-weight: 800; color: #111827; margin: 10px 0 25px 0;
+  font-size: 3rem;
+  font-weight: 800;
+  color: #111827;
+  margin: 10px 0 25px 0;
 }
 
 .pie-chart {
-  width: 160px; height: 160px; border-radius: 50%;
-  margin: 0 auto 30px auto; border: 8px solid white;
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  margin: 0 auto 30px auto;
+  border: 8px solid white;
   box-shadow: 0 0 0 1px #e5e7eb;
 }
 
 /* Stats Cards Row */
 .stats-grid {
-  display: flex; gap: 20px; width: 100%; justify-content: center; flex-wrap: wrap;
+  display: flex;
+  gap: 20px;
+  width: 100%;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
 .stat-card {
-  flex: 1; min-width: 120px; padding: 15px; border-radius: 12px;
-  text-align: center; font-weight: bold;
+  flex: 1;
+  min-width: 120px;
+  padding: 15px;
+  border-radius: 12px;
+  text-align: center;
+  font-weight: bold;
 }
+
 .stat-correct { background: #dcfce7; color: #166534; }
 .stat-wrong { background: #fee2e2; color: #991b1b; }
 .stat-skip { background: #fef3c7; color: #92400e; }
@@ -140,28 +245,41 @@
 .stat-num { display: block; font-size: 1.5rem; margin-bottom: 5px; }
 .stat-label { font-size: 0.85rem; text-transform: uppercase; opacity: 0.8; }
 
-/* --- REVIEW SECTION --- */
+/* =========================================
+   5. REVIEW SECTION
+   ========================================= */
 .review-card {
-  background: white; border-radius: 12px;
-  padding: 25px; margin-bottom: 20px;
+  background: white;
+  border-radius: 12px;
+  padding: 25px;
+  margin-bottom: 20px;
   box-shadow: 0 2px 5px rgba(0,0,0,0.03);
   border: 1px solid #f3f4f6;
   position: relative;
   overflow: hidden;
+  text-align: left;
 }
 
-/* Side Borders for visual status */
+/* Colored Side Borders */
 .review-card.status-correct { border-left: 6px solid #22c55e; }
 .review-card.status-wrong { border-left: 6px solid #ef4444; }
 .review-card.status-skip { border-left: 6px solid #f59e0b; }
 
 .review-header {
-  display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 15px;
 }
 
+/* Badges */
 .status-badge {
-  font-size: 0.75rem; padding: 4px 10px; border-radius: 20px;
-  font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;
+  font-size: 0.75rem;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 .badge-correct { background: #dcfce7; color: #166534; }
 .badge-wrong { background: #fee2e2; color: #991b1b; }
@@ -169,51 +287,91 @@
 
 /* Review Options */
 .review-option {
-  padding: 12px 15px; border-radius: 8px; margin-bottom: 8px;
-  display: flex; align-items: center; gap: 12px; border: 1px solid transparent;
+  padding: 12px 15px;
+  border-radius: 8px;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border: 1px solid transparent;
 }
+
 .opt-default { background: #f9fafb; border-color: #e5e7eb; color: #374151; }
 .opt-correct { background: #dcfce7; border-color: #86efac; color: #14532d; font-weight: 600; }
 .opt-wrong { background: #fee2e2; border-color: #fca5a5; color: #7f1d1d; }
-.opt-missed { color: #15803d; font-weight: 600; /* Text green if they missed it */ }
+.opt-missed { color: #15803d; font-weight: 600; /* Correct answer text is green if missed */ }
 
-/* Explanation Box */
+/* =========================================
+   6. CODE BLOCK STYLING (Dark Mode)
+   ========================================= */
+.code-block {
+  background-color: #1e1e1e;
+  color: #d4d4d4;
+  padding: 15px;
+  border-radius: 8px;
+  font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+  font-size: 0.95rem;
+  white-space: pre-wrap;
+  line-height: 1.5;
+  margin: 15px 0;
+  border: 1px solid #333;
+  display: block;
+  overflow-x: auto;
+}
+
+.inline-code {
+  background-color: #f3f4f6;
+  color: #c7254e;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-family: monospace;
+  font-size: 0.9em;
+  border: 1px solid #e5e7eb;
+}
+
+/* =========================================
+   7. EXPLANATION & BUTTONS
+   ========================================= */
 .explanation-box {
-  background: #f8fafc; border: 1px dashed #cbd5e1;
-  border-radius: 10px; padding: 20px; margin-top: 20px;
-  color: #475569; line-height: 1.6;
+  background: #f8fafc;
+  border: 1px dashed #cbd5e1;
+  border-radius: 10px;
+  padding: 20px;
+  margin-top: 20px;
+  color: #475569;
+  line-height: 1.6;
 }
+
 .expl-title {
-  display: block; font-weight: 700; color: #334155;
-  margin-bottom: 8px; display: flex; align-items: center; gap: 8px;
+  display: block;
+  font-weight: 700;
+  color: #334155;
+  margin-bottom: 8px;
 }
-.expl-image { max-width: 100%; border-radius: 8px; margin-top: 10px; border: 1px solid #e2e8f0; }
 
-/* Button */
+.expl-image {
+  max-width: 100%;
+  border-radius: 8px;
+  margin-top: 10px;
+  border: 1px solid #e2e8f0;
+}
+
 .exam-btn {
-  background: #e91e63; color: white; border: none; padding: 16px;
-  font-size: 1.1rem; font-weight: 700; border-radius: 12px; cursor: pointer;
-  width: 100%; transition: all 0.2s; box-shadow: 0 4px 12px rgba(233, 30, 99, 0.3);
-}
-.exam-btn:hover { background: #be123c; transform: translateY(-2px); }
-
-/* --- BACK LINK BUTTON --- */
-.exam-back-link {
-  display: inline-block;
-  color: #3f51b5; /* Primary Blue */
-  text-decoration: none;
-  font-weight: 600;
-  background: white;
-  padding: 10px 25px;
-  border-radius: 50px; /* Pill Shape */
-  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-  transition: all 0.2s ease;
-  border: 1px solid #eef2f6;
+  background: #e91e63;
+  color: white;
+  border: none;
+  padding: 16px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  border-radius: 12px;
+  cursor: pointer;
+  width: 100%;
+  transition: all 0.2s;
+  box-shadow: 0 4px 12px rgba(233, 30, 99, 0.3);
+  margin-top: 20px;
 }
 
-.exam-back-link:hover {
-  transform: translateX(-5px); /* Slide left effect */
-  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
-  background: #fff;
-  color: #2c3e50;
+.exam-btn:hover {
+  background: #be123c;
+  transform: translateY(-2px);
 }
