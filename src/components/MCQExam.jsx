@@ -114,7 +114,7 @@ export default function MCQExam() {
               onChange={(e) => setJsonInput(e.target.value)} 
             />
             <button className="exam-btn" onClick={startExam}>
-              Start Exam 🚀
+              Start Exam 
             </button>
           </div>
         </div>

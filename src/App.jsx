@@ -55,7 +55,7 @@ export default function App() {
                     <p className="exam-card-subtitle">Test your knowledge with MCQs</p>
                   </div>
                   <Link to="/exam" className="exam-card-btn">
-                    Take MCQ Exam 🚀
+                    Take MCQ Exam 
                   </Link>
                 </div>
               </div>
