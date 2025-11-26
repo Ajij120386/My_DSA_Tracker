@@ -1,28 +1,52 @@
-# DSA Progress Tracker 🚀
+# Ultimate DSA Tracker & Exam Platform 🚀
 
-A clean, modern, and responsive web application to track your progress in solving Data Structures and Algorithms problems. Built with React and designed for simplicity, this tracker helps you stay organized and motivated on your coding journey.
+A comprehensive, modern, and responsive web application designed to help developers master Data Structures and Algorithms. This isn't just a checklist; it's a complete learning platform featuring progress tracking and a **built-in MCQ Exam System** with support for Mathematical formulas and Code snippets.
 
-The entire problem list is managed in a single, easy-to-edit `data.jsx` file, making it incredibly simple to customize and add your own DSA sheets.
+
+**Live Demo:** [https://ajij-dsa-tracker.vercel.app/](https://ajij-dsa-tracker.vercel.app/)
 
 ## ✨ Features
 
--   **Categorized Topics**: Problems are neatly organized into topics like Arrays, Strings, Dynamic Programming, and more.
--   **Visual Progress Tracking**: A global progress bar shows your overall completion percentage.
--   **Per-Topic Progress**: Each category card displays your progress for that specific topic.
--   **Persistent State**: Your progress is automatically saved in your browser's local storage, so you'll never lose your work.
--   **Live Search**: Instantly filter problems within a topic page.
--   **Direct Problem Links**: Click on any problem to go directly to the corresponding LeetCode or GeeksforGeeks page.
--   **Fully Customizable**: Add, remove, or edit topics and questions with ease by modifying a single data file.
--   **Responsive Design**: A beautiful and functional layout that works on all devices, from desktops to mobile phones.
+### 🧠 DSA Progress Tracker
+-   **Categorized Roadmap**: Problems are organized by topics (Arrays, Linked Lists, DP, Graph, etc.).
+-   **Visual Progress Bars**: Track completion status globally and per topic.
+-   **Persistent Data**: Your progress is saved automatically to LocalStorage.
+-   **Platform Integration**: Direct links to LeetCode, GeeksforGeeks, and HackerEarth problems.
+-   **Live Search**: Instantly filter problems by name within categories.
+
+### 📝 Interactive MCQ Exam System
+-   **Dynamic Exam Generation**: Create exams instantly by pasting a JSON question set.
+-   **Rich Text Support**: Renders **Math Formulas** (LaTeX), **Code Blocks** (with syntax styling), and **Bold** text.
+-   **Real-time Timer**: Auto-submits the exam when time runs out.
+-   **Smart Result Dashboard**:
+    -   Interactive Pie Chart for performance analysis.
+    -   Detailed question review with "Correct", "Wrong", and "Skipped" indicators.
+    -   Explanation section for deep learning.
+
 
 ## 📸 Screenshots
 
 ### Homepage                            
-<img width="1920" height="1840" alt="image" src="https://github.com/user-attachments/assets/fb80e83d-ab3b-485b-8bbc-4ee1eeee5349" />
+
+<img width="1920" height="2181" alt="image" src="https://github.com/user-attachments/assets/c16fcf20-140d-4c6f-ba4c-036d4d8cfb7a" />
+
 
 ### Topic Page
 
 <img width="1920" height="1480" alt="image" src="https://github.com/user-attachments/assets/0717a9a1-61b1-40a8-a56f-60209b1df161" />
+
+### MCQ Exam Admin Interface
+
+<img width="1920" height="1061" alt="image" src="https://github.com/user-attachments/assets/5396e5b0-7626-4b1c-b486-f45f20bdc95d" />
+
+### MCQ Exam Question Dashboard
+
+<img width="1920" height="4232" alt="image" src="https://github.com/user-attachments/assets/bab788bb-edae-4d55-a4a2-cfa336ba7caf" />
+
+
+### Exam Result Dashboard
+
+<img width="1920" height="4585" alt="image" src="https://github.com/user-attachments/assets/a4dc8142-9eae-402f-b337-2e174e25f5fb" />
 
 
 ## 🛠️ Tech Stack
