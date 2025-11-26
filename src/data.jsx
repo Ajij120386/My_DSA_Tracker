@@ -809,8 +809,8 @@ export const topics = [
         id: "nt4",
         title: "Prime factorization Using (Using SPF) ",
         url: "https://vjudge.net/problem/DMOJ-primefactor",
-        platform: "GFG",
-        platformLogo: "/logos/gfg.png",
+        platform: "Vjudge",
+        platformLogo: "/logos/vj.png",
       },
 
       {
@@ -825,7 +825,7 @@ export const topics = [
         title: "Big Mod (UVA - 374)",
         url: "https://vjudge.net/problem/UVA-374",
         platform: "VJudge",
-        platformLogo: "/logos/gfg.png",
+        platformLogo: "/logos/vj.png",
       },
       {
         id: "nt7",
@@ -1011,9 +1011,9 @@ export const topics = [
       {
         id: "stl3",
         title: "Balanced Brackets",
-        url: "https://www.hackerearth.com/practice/algorithms/string-algorithm/string-searching/practice-problems/approximate/balance-brackets-f05b6f2c/",
-        platform: "HackerEarth",
-        platformLogo: "/logos/gfg.png",
+        url: "https://www.hackerrank.com/challenges/balanced-brackets/problem",
+        platform: "HackerRank",
+        platformLogo: "/logos/hr.png",
       },
       {
         id: "stl4",
@@ -1031,10 +1031,10 @@ export const topics = [
       },
       {
         id: "stl6",
-        title: "Next Greater Element I",
-        url: "https://leetcode.com/problems/next-greater-element-i/description/",
-        platform: "LeetCode",
-        platformLogo: "/logos/leetcode.png",
+        title: "Next Greater Element ",
+        url: "https://www.geeksforgeeks.org/problems/next-larger-element-1587115620/1",
+        platform: "GFG",
+        platformLogo: "/logos/gfg.png",
       },
       {
         id: "stl7",
@@ -1042,6 +1042,13 @@ export const topics = [
         url: "https://leetcode.com/problems/next-greater-element-ii/description/",
         platform: "LeetCode",
         platformLogo: "/logos/leetcode.png",
+      },
+       {
+        id: "stl8",
+        title: "Next Greater Element II",
+        url: "https://www.geeksforgeeks.org/problems/stock-span-problem-1587115621/1",
+        platform: "GFG",
+        platformLogo: "/logos/gfg.png",
       },
     ],
   },
