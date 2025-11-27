@@ -1052,6 +1052,86 @@ export const topics = [
       },
     ],
   },
+    
+  // --- NEW INTERVALS CATEGORY ---
+  {
+    id: "intervals",
+    name: "Intervals",
+    questions: [
+      {
+        id: "int1",
+        title: "Merge Intervals",
+        url: "https://leetcode.com/problems/merge-intervals/description/",
+        platform: "LeetCode",
+        platformLogo: "/logos/leetcode.png",
+      },
+      {
+        id: "int2",
+        title: "Insert Interval",
+        url: "https://leetcode.com/problems/insert-interval/description/",
+        platform: "LeetCode",
+        platformLogo: "/logos/leetcode.png",
+      },
+      {
+        id: "int3",
+        title: "Non-overlapping Intervals",
+        url: "https://leetcode.com/problems/non-overlapping-intervals/description/",
+        platform: "LeetCode",
+        platformLogo: "/logos/leetcode.png",
+      },
+      {
+        id: "int4",
+        title: "Minimum Number of Platforms",
+        url: "https://www.geeksforgeeks.org/problems/minimum-platforms-1587115620/1",
+        platform: "GFG",
+        platformLogo: "/logos/gfg.png",
+      },
+      {
+        id: "int5",
+        title: "Job Sequencing Problem",
+        url: "https://www.geeksforgeeks.org/problems/job-sequencing-problem-1587115620/1",
+        platform: "GFG",
+        platformLogo: "/logos/gfg.png",
+      },
+      {
+        id: "int6",
+        title: "Meeting Rooms",
+        url: "https://neetcode.io/problems/meeting-schedule/question",
+        platform: "NeetCode",
+        platformLogo: "/logos/leetcode.png",
+      },
+      {
+        id: "int7",
+        title: "Meeting Rooms II",
+        url: "https://neetcode.io/problems/meeting-schedule-ii/question",
+        platform: "NeetCode",
+        platformLogo: "/logos/leetcode.png",
+      },
+    ],
+  },
+
+  {
+    id: "greedy",
+    name: "Greedy",
+    questions: [
+      {
+        id: "gr1",
+        title: "Jump Game",
+        url: "https://leetcode.com/problems/jump-game/",
+        platform: "LeetCode",
+        platformLogo: "/logos/leetcode.png",
+      },
+      {
+        id: "gr2",
+        title: "Jump Game II",
+        url: "https://leetcode.com/problems/jump-game-ii/description/",
+        platform: "LeetCode",
+        platformLogo: "/logos/leetcode.png",
+      },
+    ],
+  },
+
+
 ];
 
 // This function automatically collects all questions from every topic.
