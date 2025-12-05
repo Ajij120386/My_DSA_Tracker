@@ -680,27 +680,28 @@ export const topics = [
         platform: "GFG",
         platformLogo: "/logos/gfg.png",
       },
-      {
+        {
         id: "dp15",
+        title: "Number of Ways to Assign + and - to Reach Target",
+        url: "https://leetcode.com/problems/target-sum/description/",
+        platform: "LeetCode",
+        platformLogo: "/logos/leetcode.png",
+      },
+      {
+        id: "dp16",
         title: "0/1 Knapsack Problem",
         url: "https://www.geeksforgeeks.org/problems/0-1-knapsack-problem0945/1",
         platform: "GFG",
         platformLogo: "/logos/gfg.png",
       },
       {
-        id: "dp16",
-        title: "Minimum coin change problem",
+        id: "dp17",
+        title: "Minimum Coins to Make Amount",
         url: "https://leetcode.com/problems/coin-change/description/",
         platform: "LeetCode",
         platformLogo: "/logos/leetcode.png",
       },
-      {
-        id: "dp17",
-        title: "Target Sum",
-        url: "https://leetcode.com/problems/target-sum/description/",
-        platform: "LeetCode",
-        platformLogo: "/logos/leetcode.png",
-      },
+      
       {
         id: "dp18",
         title: "Unbound knapsack",
@@ -832,7 +833,7 @@ export const topics = [
         title: "Combinations",
         url: "https://lightoj.com/problem/combinations",
         platform: "LightOJ",
-        platformLogo: "/logos/gfg.png",
+        platformLogo: "/logos/loj.png",
       },
       {
         id: "nt8",
